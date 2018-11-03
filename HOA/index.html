@@ -1,0 +1,126 @@
+<!doctype html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<meta charset="utf-8">
+	<title>Cypress Park HOA News Letter</title>
+	<link type="text/css" href="css/hoa.css" rel="stylesheet" />
+	<link rel="stylesheet" type="text/css" href="css/menu.css">
+	<link rel="stylesheet" type="text/css" href="css/modal.css">
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+	<script src="js/menuObjects.js"></script>
+    <script src="js/menu_builder.js"></script>
+	<script src="js/hoa.js"></script>
+	<script src="js/Login.js"></script>
+
+</head>
+
+<body>
+		<input id="loginBtn" type="button" onClick="login()" value="Login?" style="margin-top: -10px;"/>
+		<p style="display: inline-block; margin-top: -10px;" id="userName"></p>
+		<script>
+			
+			var newLogin = new Login();
+
+		</script>
+
+	<header class="header">
+		<div class="topBorder"></div>
+		<h1>Cypress Park Subdivision, Zion IL</h1>
+		<script>
+			//root denote the split point for dynamic relative links, null for none
+			var root = '';
+			var menu = new MenuBuilder(root, primaryMenu, subMenus, sidePrimaryMenu, altSubMenus);
+			menu.menuFunction();
+		</script>
+		<div class="bottomBorder"></div>
+	</header>
+	<div id="myModal" class="modal">
+		<div class="modal-content">
+			<h2><p id="modalP">Enter your login!</p></h2>
+			
+				<label for="userNameInput" class="loginLabel" >User: <input type="text" class="loginUserName" id="userNameInput"/></label><br/>
+				<label for="userPassword" class="loginLabel" >Password: <input type="password" class="loginPassword" id="userPassword"/></label><br/>
+				<input type="button" value="Submit" class="loginBtn" onClick="checkLogin();"/>
+			<span class="close">X</span>
+		</div>
+	</div>
+	<main class="one-whole">
+		<br>
+		<br>
+		<h1>Coming Soon!!</h1>
+
+	</main>
+	<footer class="footer">
+		<h3>Email us at: <a href="mailto:cypressparkhoa@gmail.com" title="email us">cypressparkhoa@gmail.com</a></h3>
+		<h4>We’re on Facebook: <a href="https://www.facebook.com/groups/1475017722820671/" title="Visit us on Facebook" target="_blank">Cypress Park Homeowners</a></h4>
+	</footer>
+		<script src="js/modal.js"></script>
+		<script src="js/Tools.js"></script>
+		<script src="js/json_to_obj.js"></script>
+	<script src="js/BB_List.js"></script>
+	<script src="js/inputValidation.js"></script>
+	<script>
+		var user;
+		var tools = new Tools();
+		document.getElementById('userNameInput').addEventListener('keypress', tools.checkKeyCode);
+		document.getElementById('userPassword').addEventListener('keypress', tools.checkKeyCode);
+		var u2 = tools.getCookie('USER');
+		if(u2 == null || u2 == ''){
+			document.cookie = "USER=" + JSON.stringify({"user":"Guest","level":0,"displayName":"Guest"});
+		}
+		var u = tools.getCookie('USER');
+		//console.log(u);
+		user = JSON.parse(u);
+		var newLogin = new Login();
+	
+		if(JSON.stringify(user) != 'null' && user != '' && typeof user != 'undefined'){
+			//console.log(JSON.stringify(user));
+			if(user.level == 1){
+				document.body.style.backgroundColor = 'yellow';	
+				document.getElementById('loginBtn').value = 'LogOut?';
+				
+			}
+			document.getElementById('userName').innerHTML = user.displayName;
+		}
+		//var disclaimer = new DISCLAIMER();
+		function testFunction(event){
+			"use strict";
+			//console.log(event.keyCode);
+			if(event.keyCode === 13){
+				
+			}
+		};
+		var bbList = new BB_List();
+		
+		//var validator = new InputValidator();
+		//gets postings.json
+		getObjFromJSON(getJSONObj('json/postings.json?nocache=123'),"index.html");
+		
+		
+	</script>
+		<!--<script>
+			var user;
+			var tools = new Tools();
+			if(tools.getCookie('USER') != null){
+				//var c = getCookie('USER');
+				user = JSON.parse(tools.getCookie('USER'));
+				if(user.userName != ''){
+					//user = JSON.parse(getCookie('USER'));
+					console.log(user);
+					document.getElementById('userName').innerHTML = user.displayName;
+					if(user.level == 1){
+						document.body.style.backgroundColor = "yellow";
+					}else{
+						document.body.style.backgroundColor = 'white';
+					}
+					document.getElementById('loginBtn').value = "LogOut?";
+				}
+			}
+			
+			
+		</script>-->
+	<script src="js/Tools.js"></script>
+</body>
+</html>

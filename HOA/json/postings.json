@@ -1,0 +1,34 @@
+[{
+	"itemNumber": 0,
+	"date": "2018-10-15",
+	"item": {
+		"title": "Cypress Park Community Website",
+		"subTitle": "Information for the Community",
+		"content": "Welcome to the Cypress Park, Zion IL, community website.",
+		"notes": "<a href=\"mailto:roywine@gmail.com\" title=\"email webmaster\">Email the Web Master</a>",
+		"approved": true,
+		"banner"	:	true
+	}
+}, {
+	"itemNumber": 1,
+	"date": "2018-10-22",
+	"item": {
+		"title": "Check your hoses",
+		"subTitle": "Freeze Warning",
+		"content": "There is a good possibility that you will experience a frozen hose.  This can lead to water damage.  Please turn off and disconnect your outside hoses.",
+		"notes": "you can do it, or buy new hoses",
+		"approved": true,
+		"banner"	:	true
+	}
+}, {
+	"itemNumber": 2,
+	"date": "2018-11-12",
+	"item": {
+		"title": "HOA Meeting",
+		"subTitle": "Zion-Benton Public Library",
+		"content": "Come out and support your HOA and your community.  Meetings starts promptly at 7pm on Monday, November 12th.",
+		"notes": "This is a voting meeting.",
+		"approved": true,
+		"banner"	:	true
+	}
+}]

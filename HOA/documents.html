@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<meta charset="utf-8">
+	<title>Cypress Park HOA News Letter</title>
+	<link type="text/css" href="css/hoa.css" rel="stylesheet" />
+	<link rel="stylesheet" type="text/css" href="css/menu.css">
+	<link rel="stylesheet" type="text/css" href="css/ExtLinkDisclaimer.css">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+	<script src="js/menuObjects.js"></script>
+    <script src="js/menu_builder.js"></script>
+	<script src="js/ExtLinkDisclaimer.js"></script>
+	<script>
+		var user;
+		if(getCookie('USER') != null){
+			user = JSON.parse(getCookie('USER'));
+		}
+		
+	</script>	
+</head>
+
+<body>
+	<header class="header">
+		<div class="topBorder"></div>
+		<h1>Cypress Park Subdivision, Zion IL</h1>
+		<script>
+			//root denote the split point for dynamic relative links, null for none
+			var root = 'HOA';
+			var menu = new MenuBuilder(root, primaryMenu, subMenus, sidePrimaryMenu, altSubMenus);
+		</script>
+		<div class="bottomBorder"></div>
+	</header>
+	<main class="one-whole">
+		<div class="docParent">
+			<div class="docChild">
+				<h1>Documents</h1>
+				<p>Here you will find documents related to the Cypress Park HOA.  This includes the by-laws, instructions for board submissions, etc.  Documents are presented in pdf format for ease of use.</p>
+			</div>
+			<div class="docChild">
+				<ul class="linkBtns">
+					<li> HOA By-Laws: <a href="javascript:disclaimer.showPDF('pdf/Cypress Park HOA ByLaws.pdf','ByLaws'); void 0" title="HOA By-Laws">(online)</a><a href="pdf/Cypress Park HOA ByLaws.pdf" title="HOA By-Laws" target="_blank">(pdf)</a></li>
+					<li>Board Submission Instructions: <a href="javascript:disclaimer.showPDF('pdf/Sample Document.pdf','Instructions for submission to board'); void 0" title="Instructions for submission to board">(online)</a><a href="pdf/Sample Document.pdf" title="Instructions for submission to board" target="_blank">(pdf)</a></li>
+					<li><a href="javascript:void" title="Other Documents Needed">Other Documents</a></li>
+					<li><a href="javascript:void" title="Other Documents Needed">Other Documents</a></li>
+					<li><a href="javascript:void" title="Other Documents Needed">Other Documents</a></li>
+					<li><a href="javascript:void" title="Other Documents Needed">Other Documents</a></li>
+				</ul>
+			</div>
+		</div>
+
+	</main>
+	<footer class="footer">
+		<h3>Email us at: <a href="mailto:cypressparkhoa@gmail.com" title="email us">cypressparkhoa@gmail.com</a></h3>
+		<h4>We’re on Facebook: <a href="https://www.facebook.com/groups/1475017722820671/" title="Visit us on Facebook" target="_blank">Cypress Park Homeowners</a></h4>
+	</footer>
+	<script type="text/javascript">
+
+                ddmegamenu.docinit({
+                    menuid:'solidmenu',
+                    dur:400,
+                    easing:'easeInOutCirc' //<--no comma after last setting
+                })
+                
+                jQuery(function(){ // on DOM load
+                    menu2 = new sidetogglemenu({  // initialize menu
+                        id: 'togglemenu2',
+                        marginoffset: 0,
+                        downarrowsrc: 'img/toggledown.png'
+                    })
+                })
+                
+                function unhideMenu(){
+                
+                    var menuVis = document.getElementById('solidmenu').style.display;
+                    if(menuVis === 'none' || menuVis !== ""){
+                        document.getElementById('solidmenu').style.display = '';
+                    }else{
+                        document.getElementById('solidmenu').style.display = 'none';
+                    }
+                    
+                }
+
+        </script>
+		<script>var disclaimer = new DISCLAIMER();</script>
+</body>
+</html>

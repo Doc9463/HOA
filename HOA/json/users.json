@@ -1,0 +1,14 @@
+[
+	{
+		"userName"	:	"roywine",
+		"password"	:	"test",
+		"level"		:	1,
+		"displayName"		:	"Roy Wine"
+	},
+	{
+		"userName"	:	"",
+		"password"	:	"test",
+		"level"		:	0,
+		"displayName"		:	"Guest"
+	}
+]
